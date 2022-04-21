@@ -7,8 +7,8 @@ import useRecipeState from "../hooks/useRecipeState";
 
 function RecipeForm(params) {
   const id = params.id;
-  const [name, handleNameChange, setName] = useInput('');
-  const [description, handleDescriptionChange, setDescription] = useInput('');
+  const [name, handleNameChange, resetName, setName] = useInput('');
+  const [description, handleDescriptionChange, resetDescription, setDescription] = useInput('');
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient, cleanNewIngredient] = useInput("");
   const [disabled, setDisabled] = useState(true);
@@ -34,6 +34,7 @@ function RecipeForm(params) {
     const recipeIngredients = data.ingredients.map(function (ingredient) {
       return ingredient.name
     })
+    console.log(data);
     setIngredients(recipeIngredients);
     setName(data.name);
     setDescription(data.description);
