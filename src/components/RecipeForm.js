@@ -33,8 +33,7 @@ function RecipeForm(params) {
     const data = await getRecipeById(id);
     const recipeIngredients = data.ingredients.map(function (ingredient) {
       return ingredient.name
-    })
-    console.log(data);
+    });
     setIngredients(recipeIngredients);
     setName(data.name);
     setDescription(data.description);

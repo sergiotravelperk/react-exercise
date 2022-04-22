@@ -7,7 +7,7 @@ function Navbar(props) {
     <NavBarContainer>
       <NavTitle>
         <Link to="/">
-          <NavLogo src={props.src}></NavLogo>
+          <NavLogo aria-label="logo" src={props.src}></NavLogo>
           {props.title}
         </Link>
       </NavTitle>

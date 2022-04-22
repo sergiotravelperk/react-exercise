@@ -13,7 +13,12 @@ function SearchBar(props) {
     return (
         <SearchContainer>
             <form aria-label="search-bar" onSubmit={filterRecipe}>
-                <SearchInput type={"text"} onChange={setValue} value={value} placeholder="Search recipes..."/>
+                <SearchInput 
+                    aria-label="search-input" 
+                    type={"text"} 
+                    onChange={setValue} 
+                    value={value} 
+                    placeholder="Search recipes..."/>
             </form>
         </SearchContainer>
     )

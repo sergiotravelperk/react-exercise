@@ -13,7 +13,7 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div aria-label="main-app" className="App">
         <NavBar src={logo} title="React Exercise">          
         </NavBar>
         <Routes>
