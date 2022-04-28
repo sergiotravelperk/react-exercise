@@ -22,7 +22,6 @@ function RecipeForm(params) {
   }
 
   function addIngredient(e) {
-    e.preventDefault();
     if (newIngredient && newIngredient !== "") {
       setIngredients([...ingredients, newIngredient])
       cleanNewIngredient();
@@ -43,15 +42,11 @@ function RecipeForm(params) {
     if (id) {
       loadRecipe()
     }
-  }, [params]);
+  }, [id]);
 
-  useEffect(() => {
-    if (name !== "" && description !== "" && ingredients.length > 0) {
-      setDisabled(false)
-    } else {
-      setDisabled(true)
-    }
-  }, [name, description, ingredients])
+  useEffect(() => {    
+      setDisabled(!(name !== "" && description !== "" && ingredients.length > 0));    
+  }, [name, description, ingredients]);
 
   async function save(e) {
     e.preventDefault();
@@ -76,7 +71,7 @@ function RecipeForm(params) {
   return (
     <FormRecipeContainer>
       <form onSubmit={save}>
-        <h3>{id ? "Edit Recipe" : "Create Recipe"}</h3>
+        <h3 htmlFor="id">{id ? "Edit Recipe" : "Create Recipe"}</h3>
         <FormWrapper>
           <label htmlFor="name">Name</label>
           <input onChange={handleNameChange} value={name} maxLength="255" />

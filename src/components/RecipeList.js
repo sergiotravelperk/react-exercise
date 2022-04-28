@@ -5,7 +5,7 @@ import RecipeItem from './RecipeItem';
 function RecipeList({ recipes, refresh }) {
     return (
       <RecipeContainer>
-          {recipes && recipes.map((recipe, i) => (
+          {recipes?.map((recipe, i) => (
             <React.Fragment key={i}>
                 <RecipeItem
                     recipe = {recipe}
